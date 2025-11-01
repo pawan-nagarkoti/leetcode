@@ -541,3 +541,16 @@
 // };
 
 // console.log(shortestCompletingWord(licensePlate, words));
+
+// =========================================================================
+// prime Number
+const checkPrimenumber = (number) => {
+  for (let i = 2; i <= 9; i++) {
+    if (number !== i && number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+let p = 1483;
+console.log(checkPrimenumber(p));
