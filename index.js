@@ -314,23 +314,230 @@
 
 // console.log(c);
 
-let a = [1, 2, 3, 1, 1, 3];
+// let a = [1, 2, 3, 1, 1, 3];
 
-let fun = (a) => {
-  let value;
+// let fun = (a) => {
+//   let value;
 
-  for (let i = 0; i < a.length; i++) {
-    if (value !== null && value !== 0) break;
-    value = a[i];
-    for (let j = 0; j < a.length; j++) {
-      if (a[i] == a[j]) {
-        value = null;
-        break;
-      }
-    }
-  }
-  return value;
-};
+//   for (let i = 0; i < a.length; i++) {
+//     if (value !== null && value !== 0) break;
+//     value = a[i];
+//     for (let j = 0; j < a.length; j++) {
+//       if (a[i] == a[j]) {
+//         value = null;
+//         break;
+//       }
+//     }
+//   }
+//   return value;
+// };
 
-const ans = fun(a);
-console.log(ans);
+// const ans = fun(a);
+// console.log(ans);
+
+// console.log("start");
+// setTimeout(() => console.log("1000"), 1000);
+
+// setTimeout(() => console.log("time"), 0);
+// const p = Promise.resolve("Promise");
+// const sp = new Promise((resolve, reject) => {
+//   console.log("resolve");
+// });
+
+// console.log(p);
+// p.then((res) => console.log(res));
+// console.log("error");
+
+// const p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("p1 Process");
+//   }, 100);
+// });
+// const p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("p2 Process");
+//   }, 1000);
+// });
+// const p3 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("p3 Process");
+//   }, 1000);
+// });
+
+// const r = Promise.any([p1, p2, p3])
+//   .then((r) => console.log(r))
+//   .catch((e) => console.log(e));
+
+// console.log(r);
+
+// console.log("start");
+// const p1 = new Promise((resolve, reject) => {
+//   console.log(1);
+//   reject(new Error("new Error"));
+//   console.log(2);
+// });
+// p1.then((r) => console.log(r)).then((r) => console.log(r));
+// console.log("stop");
+
+// const p1 = new Promise((resolve, reject) => {
+//   reject();
+// });
+
+// p1.then((r) => console.log("first"))
+//   .then((r) => console.log("second"))
+//   .then((r) => console.log("third"))
+//   .catch((e) => console.log("error"))
+//   .then((r) => console.log("hi"));
+// const [value, setValue] = useState(0);
+
+// export const useLocal = (name, value) => {
+//   let setValue = (updateValue)=> localStorage.setItem(name, updateValue);
+//   let getValue = localStorage.getItem(name) || value;
+//   return { setValue, getValue };
+// };
+
+// useLocal("token", abckck23);
+
+// import { useState } from "react";
+
+// const useLocalStorage = (key, defaultValue) => {
+//     // Create state variable to store
+//     // localStorage value in state
+//     const [localStorageValue, setLocalStorageValue] = useState(() => {
+//         try {
+//             const value = localStorage.getItem(key)
+//             // If value is already present in
+//             // localStorage then return it
+
+//             // Else set default value in
+//             // localStorage and then return it
+//             if (value) {
+//                 return JSON.parse(value)
+//             } else {
+//                 localStorage.setItem(key, JSON.stringify(defaultValue));
+//                 return defaultValue
+//             }
+//         } catch (error) {
+//             localStorage.setItem(key, JSON.stringify(defaultValue));
+//             return defaultValue
+//         }
+//     })
+
+//     // this method update our localStorage and our state
+//     const setLocalStorageStateValue = (valueOrFn) => {
+//         let newValue;
+//         if (typeof valueOrFn === 'function') {
+//             const fn = valueOrFn;
+//             newValue = fn(localStorageValue)
+//         }
+//         else {
+//             newValue = valueOrFn;
+//         }
+//         localStorage.setItem(key, JSON.stringify(newValue));
+//         setLocalStorageValue(newValue)
+//     }
+//     return [localStorageValue, setLocalStorageStateValue]
+// }
+
+// export default useLocalStorage;
+
+// useReducer, filter, map, forEach, every, reduce, flux
+// getter , setter
+
+// let p1 = Promise.resolve("Task1").then((r) => console.log(r));
+// let p2 = Promise.reject("Task2").then((r) => console.log(r));
+// let p3 = Promise.resolve("task3").then((r) => console.log(r));
+
+// let p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // console.log("Task1");
+//     resolve("Task1");
+//   }, 1000);
+// });
+
+// let p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("task2");
+//     // console.log("Task2");
+//   }, 100);
+// });
+
+// Promise.any([p1, p2])
+//   .then((r) => console.log(r))
+//   .catch((e) => console.log(e));
+
+// var shortestCompletingWord = function (licensePlate, words) {
+//   let ca = [];
+//   for (let i = 0; i < licensePlate.length; i++) {
+//     ca.push(licensePlate[i].toLowerCase());
+//   }
+//   let copyCa = ca;
+//   let obj = [];
+//   for (let i = 0; i < words.length; i++) {
+//     let w = words[i];
+//     let cl = w[w.length - 1];
+//     let count = 0;
+//     let name = "";
+//     for (let j = 0; j < w.length; j++) {
+//       if (copyCa.includes(w[j])) {
+//         count = count + 1;
+//         name += w[j];
+
+//         if (cl === w[j]) {
+//           obj.push({
+//             length: count,
+//             name,
+//           });
+//           count = 0;
+//           name = "";
+//         }
+//       } else {
+//         // console.log("no");
+//       }
+//     }
+//     console.log(count, name);
+//   }
+//   return obj;
+// };
+// let licensePlate = "1s3 PSt";
+
+// let words = ["step", "steps", "stripe", "stepple"];
+// console.log(shortestCompletingWord(licensePlate, words));
+
+// let licensePlate = "1s3 PSt";
+// let words = ["step", "steps", "stripe", "stepple"];
+
+// var shortestCompletingWord = function (licensePlate, words) {
+//   let stringContainer = "";
+//   for (let i = 0; i < licensePlate.length; i++) {
+//     if (licensePlate[i].toLowerCase() !== licensePlate[i].toUpperCase()) {
+//       stringContainer += licensePlate[i].toLowerCase();
+//     }
+//   }
+
+//   const stringCountObject = {};
+//   for (let i = 0; i < words.length; i++) {
+//     if (i === 1) return stringCountObject;
+//     let singleWords = words[i];
+//     let modifiedString = ""; // To build the new modified string
+
+//     let countString = 0;
+//     for (let j = 0; j < stringContainer.length; j++) {
+//       if (singleWords.includes(stringContainer[j])) {
+//         for (let k = 0; k < singleWords.length; k++) {
+//           if (singleWords[k] === stringContainer[j]) {
+//             modifiedString += "*";
+//           } else {
+//             modifiedString += singleWords[k];
+//           }
+//         }
+//         console.log(stringContainer, singleWords);
+//         stringCountObject[words[i]] = countString += 1;
+//       }
+//     }
+//   }
+
+//   return stringCountObject;
+// };
+
+// console.log(shortestCompletingWord(licensePlate, words));
