@@ -591,21 +591,37 @@
 // =========================================================================
 // Check if a number is Armstrong Number or not
 // let n = 123;
-let n = 153;
-let check = n;
-let count = 0;
-let ans;
-while (n > 0) {
-  let ld = n % 10;
-  let cube = ld * ld * ld;
-  count = count + cube;
-  n = Math.floor(n / 10);
+// let n = 153;
+// let check = n;
+// let count = 0;
+// let ans;
+// while (n > 0) {
+//   let ld = n % 10;
+//   let cube = ld * ld * ld;
+//   count = count + cube;
+//   n = Math.floor(n / 10);
 
-  if (n === 0 && check === count) {
-    ans = true;
-  } else {
-    ans = false;
+//   if (n === 0 && check === count) {
+//     ans = true;
+//   } else {
+//     ans = false;
+//   }
+// }
+
+// console.log(ans);
+
+// =========================================================================
+// Print all Divisors of a given Number
+let N = 12;
+let output = [];
+let count = 1;
+
+while (count <= N) {
+  let d = N % count;
+  if (d === 0) {
+    output.push(count);
   }
+  count += 1;
 }
 
-console.log(ans);
+console.log(output);
