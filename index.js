@@ -640,11 +640,20 @@
 // =========================================================================
 // Print 1 to N using recursion
 
-function printNumber(num, n = 0) {
-  if (n >= num) return;
-  n += 1;
-  console.log(n);
-  printNumber(num, n);
+// function printNumber(num, n = 0) {
+//   if (n >= num) return;
+//   n += 1;
+//   console.log(n);
+//   printNumber(num, n);
+// }
+// let num = 5;
+// printNumber(num);
+
+// Sum of first N Natural Numbers
+let count = 0;
+let n = 6;
+for (let i = 0; i <= n; i++) {
+  count += i;
 }
-let num = 5;
-printNumber(num);
+
+console.log(count);
