@@ -612,16 +612,27 @@
 
 // =========================================================================
 // Print all Divisors of a given Number
-let N = 12;
-let output = [];
-let count = 1;
+// let N = 12;
+// let output = [];
+// let count = 1;
 
-while (count <= N) {
-  let d = N % count;
-  if (d === 0) {
-    output.push(count);
-  }
-  count += 1;
+// while (count <= N) {
+//   let d = N % count;
+//   if (d === 0) {
+//     output.push(count);
+//   }
+//   count += 1;
+// }
+
+// console.log(output);
+
+// =========================================================================
+// Print Name N times using Recursion
+function countName(n) {
+  if (n < 1) return;
+  console.log("pawan");
+  n -= 1;
+  countName(n);
 }
-
-console.log(output);
+let count = 5;
+countName(count);
