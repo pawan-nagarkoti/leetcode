@@ -575,15 +575,37 @@
 
 // =========================================================================
 // Count digits in a number
-let n = 234;
-let count = 0;
-// while (count <= n.toString().length - 1) {
-//   count = count + 1;
+// let n = 234;
+// let count = 0;
+// // while (count <= n.toString().length - 1) {
+// //   count = count + 1;
+// // }
+
+// while (n > 0) {
+//   count += 1;
+//   n = Math.floor(n / 10);
 // }
 
+// console.log(count);
+
+// =========================================================================
+// Check if a number is Armstrong Number or not
+// let n = 123;
+let n = 153;
+let check = n;
+let count = 0;
+let ans;
 while (n > 0) {
-  count += 1;
+  let ld = n % 10;
+  let cube = ld * ld * ld;
+  count = count + cube;
   n = Math.floor(n / 10);
+
+  if (n === 0 && check === count) {
+    ans = true;
+  } else {
+    ans = false;
+  }
 }
 
-console.log(count);
+console.log(ans);
