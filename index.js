@@ -544,13 +544,31 @@
 
 // =========================================================================
 // prime Number
-const checkPrimenumber = (number) => {
-  for (let i = 2; i <= 9; i++) {
-    if (number !== i && number % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
-let p = 1483;
-console.log(checkPrimenumber(p));
+// const checkPrimenumber = (number) => {
+//   for (let i = 2; i <= 9; i++) {
+//     if (number !== i && number % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// let p = 1483;
+// console.log(checkPrimenumber(p));
+
+// =========================================================================
+// Reverse number
+
+let n = -1230;
+let rev = 0;
+let sign = Math.sign(n);
+n = Math.abs(n);
+
+while (n > 0) {
+  console.log(Math.abs(n));
+  let ld = n % 10; // find last digit
+  // console.log(ld);
+  rev = rev * 10 + ld;
+  n = Math.floor(n / 10); // remove last digit
+}
+
+console.log(sign * rev);
