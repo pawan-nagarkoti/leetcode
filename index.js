@@ -628,11 +628,23 @@
 
 // =========================================================================
 // Print Name N times using Recursion
-function countName(n) {
-  if (n < 1) return;
-  console.log("pawan");
-  n -= 1;
-  countName(n);
+// function countName(n) {
+//   if (n < 1) return;
+//   console.log("pawan");
+//   n -= 1;
+//   countName(n);
+// }
+// let count = 5;
+// countName(count);
+
+// =========================================================================
+// Print 1 to N using recursion
+
+function printNumber(num, n = 0) {
+  if (n >= num) return;
+  n += 1;
+  console.log(n);
+  printNumber(num, n);
 }
-let count = 5;
-countName(count);
+let num = 5;
+printNumber(num);
