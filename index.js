@@ -558,17 +558,32 @@
 // =========================================================================
 // Reverse number
 
-let n = -1230;
-let rev = 0;
-let sign = Math.sign(n);
-n = Math.abs(n);
+// let n = -1230;
+// let rev = 0;
+// let sign = Math.sign(n);
+// n = Math.abs(n);
+
+// while (n > 0) {
+//   console.log(Math.abs(n));
+//   let ld = n % 10; // find last digit
+//   // console.log(ld);
+//   rev = rev * 10 + ld;
+//   n = Math.floor(n / 10); // remove last digit
+// }
+
+// console.log(sign * rev);
+
+// =========================================================================
+// Count digits in a number
+let n = 234;
+let count = 0;
+// while (count <= n.toString().length - 1) {
+//   count = count + 1;
+// }
 
 while (n > 0) {
-  console.log(Math.abs(n));
-  let ld = n % 10; // find last digit
-  // console.log(ld);
-  rev = rev * 10 + ld;
-  n = Math.floor(n / 10); // remove last digit
+  count += 1;
+  n = Math.floor(n / 10);
 }
 
-console.log(sign * rev);
+console.log(count);
