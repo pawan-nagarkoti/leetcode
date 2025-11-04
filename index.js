@@ -675,14 +675,112 @@
 
 // =========================================================================
 // Reverse a given Array
-let arr = [5, 4, 3, 2, 1];
-let count = arr.length - 1;
+// let arr = [5, 4, 3, 2, 1];
+// let count = arr.length - 1;
 
-for (let i = 0; i < arr.length; i++) {
-  if (i === count) break;
-  let temp = arr[i];
-  arr[i] = arr[count];
-  arr[count] = temp;
-  count -= 1;
+// for (let i = 0; i < arr.length; i++) {
+//   if (i === count) break;
+//   let temp = arr[i];
+//   arr[i] = arr[count];
+//   arr[count] = temp;
+//   count -= 1;
+// }
+// console.log(arr);
+
+// =========================================================================
+// Check if the given String is Palindrome or not
+// let str = "ABCDCBA";
+// let str = "TAKE U FORWARD";
+// let str = "A man, a plan, a canal: Panama";
+// let count = str.length - 1;
+// let check;
+// for (let i = 0; i < str.length; i++) {
+//   if (i === count) {
+//     check = true;
+//     break;
+//   }
+
+//   if (str[i] === str[count]) {
+//     check = true;
+//     count -= 1;
+//   } else {
+//     check = false;
+//     break;
+//   }
+// }
+
+// console.log(check);
+
+function stringPalindrome(str) {
+  let letter = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+  ];
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (letter.includes(str[i].toLowerCase())) {
+      newStr += str[i].toLowerCase();
+    }
+  }
+
+  if (newStr.length === 0) return true;
+  let count = newStr.length - 1;
+  let check;
+
+  console.log(newStr);
+  for (let i = 0; i < newStr.length; i++) {
+    if (i === count) {
+      check = true;
+      break;
+    }
+    if (newStr[i] === newStr[count]) {
+      check = true;
+      count -= 1;
+    } else {
+      check = false;
+      break;
+    }
+  }
+  return check;
 }
-console.log(arr);
+let str = "A man, a plan, a canal: Panama";
+
+if (stringPalindrome(str)) {
+  console.log("String is Palindrome");
+} else {
+  console.log("String is not Palindrome");
+}
