@@ -648,12 +648,41 @@
 // }
 // let num = 5;
 // printNumber(num);
+// =========================================================================
 
 // Sum of first N Natural Numbers
-let count = 0;
-let n = 6;
-for (let i = 0; i <= n; i++) {
-  count += i;
-}
+// let count = 0;
+// let n = 6;
+// for (let i = 0; i <= n; i++) {
+//   count += i;
+// }
 
-console.log(count);
+// console.log(count);
+
+// =========================================================================
+
+// 5*4*3*2*1 = 125
+// Factorial of a Number : Iterative and Recursive
+// function recursion(n, count = 1) {
+//   if (n <= 0) return count;
+
+//   count = count * n;
+//   recursion(n - 1, count);
+// }
+// let n = 5;
+// let ans = recursion(n);
+// console.log(ans);
+
+// =========================================================================
+// Reverse a given Array
+let arr = [5, 4, 3, 2, 1];
+let count = arr.length - 1;
+
+for (let i = 0; i < arr.length; i++) {
+  if (i === count) break;
+  let temp = arr[i];
+  arr[i] = arr[count];
+  arr[count] = temp;
+  count -= 1;
+}
+console.log(arr);
