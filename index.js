@@ -711,76 +711,97 @@
 
 // console.log(check);
 
-function stringPalindrome(str) {
-  let letter = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-  ];
-  let newStr = "";
-  for (let i = 0; i < str.length; i++) {
-    if (letter.includes(str[i].toLowerCase())) {
-      newStr += str[i].toLowerCase();
-    }
-  }
+// function stringPalindrome(str) {
+//   let letter = [
+//     "a",
+//     "b",
+//     "c",
+//     "d",
+//     "e",
+//     "f",
+//     "g",
+//     "h",
+//     "i",
+//     "j",
+//     "k",
+//     "l",
+//     "m",
+//     "n",
+//     "o",
+//     "p",
+//     "q",
+//     "r",
+//     "s",
+//     "t",
+//     "u",
+//     "v",
+//     "w",
+//     "x",
+//     "y",
+//     "z",
+//     0,
+//     1,
+//     2,
+//     3,
+//     4,
+//     5,
+//     6,
+//     7,
+//     8,
+//     9,
+//   ];
+//   let newStr = "";
+//   for (let i = 0; i < str.length; i++) {
+//     if (letter.includes(str[i].toLowerCase())) {
+//       newStr += str[i].toLowerCase();
+//     }
+//   }
 
-  if (newStr.length === 0) return true;
-  let count = newStr.length - 1;
-  let check;
+//   if (newStr.length === 0) return true;
+//   let count = newStr.length - 1;
+//   let check;
 
-  console.log(newStr);
-  for (let i = 0; i < newStr.length; i++) {
-    if (i === count) {
-      check = true;
-      break;
-    }
-    if (newStr[i] === newStr[count]) {
-      check = true;
-      count -= 1;
-    } else {
-      check = false;
-      break;
-    }
-  }
-  return check;
-}
-let str = "A man, a plan, a canal: Panama";
+//   console.log(newStr);
+//   for (let i = 0; i < newStr.length; i++) {
+//     if (i === count) {
+//       check = true;
+//       break;
+//     }
+//     if (newStr[i] === newStr[count]) {
+//       check = true;
+//       count -= 1;
+//     } else {
+//       check = false;
+//       break;
+//     }
+//   }
+//   return check;
+// }
+// let str = "A man, a plan, a canal: Panama";
 
-if (stringPalindrome(str)) {
-  console.log("String is Palindrome");
-} else {
-  console.log("String is not Palindrome");
-}
+// if (stringPalindrome(str)) {
+//   console.log("String is Palindrome");
+// } else {
+//   console.log("String is not Palindrome");
+// }
+
+// =========================================================================
+// Fibonacci series
+// let n = 5;
+// i = 0;
+// j = 1;
+// check = 0;
+// store = "";
+
+// while (n > check) {
+//   if (check === 0) {
+//     store += i;
+//     store += j;
+//   }
+//   check = i + j;
+//   i = j;
+//   j = check;
+//   store += check;
+// }
+
+// console.log(store);
