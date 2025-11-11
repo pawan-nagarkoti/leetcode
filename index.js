@@ -876,21 +876,67 @@
 // console.log(selectionSort(arr));
 
 // insertion sort
-function insertionSort(arr) {
-  let n = arr.length;
-  for (let i = 1; i < n; i++) {
-    let curr = arr[i];
-    let prev = i - 1;
+// function insertionSort(arr) {
+//   let n = arr.length;
+//   for (let i = 1; i < n; i++) {
+//     let curr = arr[i];
+//     let prev = i - 1;
 
-    while (prev >= 0 && arr[prev] > curr) {
-      arr[prev + 1] = arr[prev];
-      prev--;
-    }
+//     while (prev >= 0 && arr[prev] > curr) {
+//       arr[prev + 1] = arr[prev];
+//       prev--;
+//     }
 
-    arr[prev + 1] = curr;
-  }
-  return arr;
-}
+//     arr[prev + 1] = curr;
+//   }
+//   return arr;
+// }
 // let arr = [64, 34, 25, 12, 22, 11, 90];
-let arr = [1, 3, 20, 10];
-console.log(insertionSort(arr));
+// let arr = [1, 3, 20, 10];
+// console.log(insertionSort(arr));
+
+// const arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+// let rd = [];
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (!rd.includes(arr[i])) {
+//     rd.push(arr[i]);
+//   }
+// }
+
+// console.log(rd);
+
+// var removeDuplicates = function (nums) {
+//   let x = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] > nums[x]) {
+//       x = x + 1;
+//       nums[x] = nums[i];
+//     }
+//   }
+//   // nums.length = x + 1;
+//   // return nums;
+//   return x + 1;
+// };
+
+// var nums = [1, 1, 2, 4];
+// console.log(removeDuplicates(nums));
+
+var removeElement = function (nums, val) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      let n = i;
+      while (n < nums.length) {
+        nums[n] = nums[n + 1];
+        n++;
+      }
+      i--;
+      nums.length = nums.length - 1;
+    }
+  }
+  return nums;
+};
+
+let nums = [0, 1, 2, 2, 3, 0, 4, 2, 2, 3];
+val = 2;
+console.log(removeElement(nums, val));
