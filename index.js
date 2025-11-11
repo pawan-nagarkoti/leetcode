@@ -941,16 +941,63 @@
 // val = 2;
 // console.log(removeElement(nums, val));
 
-var reverseString = function (s) {
-  let count = s.length - 1;
-  for (let i = 0; i < s.length; i++) {
-    if (count < i) return s;
-    let temp = s[i];
-    s[i] = s[count];
-    s[count] = temp;
-    count--;
+// var reverseString = function (s) {
+//   let count = s.length - 1;
+//   for (let i = 0; i < s.length; i++) {
+//     if (count < i) return s;
+//     let temp = s[i];
+//     s[i] = s[count];
+//     s[count] = temp;
+//     count--;
+//   }
+// };
+// // let s = ["H", "a", "n", "n", "a", "h"];
+// let s = ["h", "e", "l", "l", "o"];
+// console.log(reverseString(s));
+
+// var maxProfit = function (prices) {
+//   let minPrice = prices[0];
+//   let index = 0;
+//   for (let i = 0; i < prices.length; i++) {
+//     if (prices[i] < minPrice) {
+//       minPrice = prices[i];
+//       index = i;
+//     }
+//   }
+//   if (index === prices.length - 1) return 0;
+//   let max = 0;
+//   for (let i = index + 1; i < prices.length; i++) {
+//     if (prices[i] > max) {
+//       max = prices[i];
+//     }
+//   }
+
+//   let profit = max - minPrice;
+//   return profit;
+// };
+// let prices = [7, 6, 4, 3, 1];
+// let prices = [2, 4, 1];
+// console.log(maxProfit(prices));
+
+var maxProfit = function (prices) {
+  let buyStock = prices[0];
+  let store = 0;
+
+  for (let i = 1; i < prices.length; i++) {
+    if (buyStock > prices[i]) {
+      buyStock = prices[i];
+    }
+
+    let maximum = prices[i] - buyStock;
+    if (store < maximum) {
+      store = maximum;
+    }
   }
+
+  return store;
 };
-// let s = ["H", "a", "n", "n", "a", "h"];
-let s = ["h", "e", "l", "l", "o"];
-console.log(reverseString(s));
+
+// let prices = [2, 4, 1];
+let prices = [7, 1, 5, 3, 6];
+
+console.log(maxProfit(prices));
