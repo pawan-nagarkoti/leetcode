@@ -922,21 +922,35 @@
 // var nums = [1, 1, 2, 4];
 // console.log(removeDuplicates(nums));
 
-var removeElement = function (nums, val) {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === val) {
-      let n = i;
-      while (n < nums.length) {
-        nums[n] = nums[n + 1];
-        n++;
-      }
-      i--;
-      nums.length = nums.length - 1;
-    }
-  }
-  return nums;
-};
+// var removeElement = function (nums, val) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === val) {
+//       let n = i;
+//       while (n < nums.length) {
+//         nums[n] = nums[n + 1];
+//         n++;
+//       }
+//       i--;
+//       nums.length = nums.length - 1;
+//     }
+//   }
+//   return nums;
+// };
 
-let nums = [0, 1, 2, 2, 3, 0, 4, 2, 2, 3];
-val = 2;
-console.log(removeElement(nums, val));
+// let nums = [0, 1, 2, 2, 3, 0, 4, 2, 2, 3];
+// val = 2;
+// console.log(removeElement(nums, val));
+
+var reverseString = function (s) {
+  let count = s.length - 1;
+  for (let i = 0; i < s.length; i++) {
+    if (count < i) return s;
+    let temp = s[i];
+    s[i] = s[count];
+    s[count] = temp;
+    count--;
+  }
+};
+// let s = ["H", "a", "n", "n", "a", "h"];
+let s = ["h", "e", "l", "l", "o"];
+console.log(reverseString(s));
