@@ -1044,21 +1044,45 @@
 // }
 // console.log(num1);
 
-var moveZeroes = function (nums) {
-  let x = 0;
+// var moveZeroes = function (nums) {
+//   let x = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== 0) {
+//       let temp = nums[x];
+//       nums[x] = nums[i];
+//       nums[i] = temp;
+//       x = x + 1;
+//     }
+//   }
+//   return nums;
+// };
+// // let nums = [0, 1, 0, 3, 12];
+// // let nums = [0];
+// // let nums = [0, 0, 1];
+// let nums = [1];
+// console.log(nums);
+// console.log(moveZeroes(nums));
+
+var findMaxConsecutiveOnes = function (nums) {
+  let c = 0;
+  let count = 0;
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== 0) {
-      let temp = nums[x];
-      nums[x] = nums[i];
-      nums[i] = temp;
-      x = x + 1;
+      count++;
+    } else {
+      if (c < count) {
+        c = count;
+      }
+      count = 0;
+    }
+
+    if (i === nums.length - 1 && c < count) {
+      c = count;
     }
   }
-  return nums;
+
+  return c;
 };
-// let nums = [0, 1, 0, 3, 12];
-// let nums = [0];
-// let nums = [0, 0, 1];
-let nums = [1];
+let nums = [1, 0, 1, 1, 0, 1];
 console.log(nums);
-console.log(moveZeroes(nums));
+console.log(findMaxConsecutiveOnes(nums));
