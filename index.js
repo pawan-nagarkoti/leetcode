@@ -979,25 +979,86 @@
 // let prices = [2, 4, 1];
 // console.log(maxProfit(prices));
 
-var maxProfit = function (prices) {
-  let buyStock = prices[0];
-  let store = 0;
+// var maxProfit = function (prices) {
+//   let buyStock = prices[0];
+//   let store = 0;
 
-  for (let i = 1; i < prices.length; i++) {
-    if (buyStock > prices[i]) {
-      buyStock = prices[i];
-    }
+//   for (let i = 1; i < prices.length; i++) {
+//     if (buyStock > prices[i]) {
+//       buyStock = prices[i];
+//     }
 
-    let maximum = prices[i] - buyStock;
-    if (store < maximum) {
-      store = maximum;
+//     let maximum = prices[i] - buyStock;
+//     if (store < maximum) {
+//       store = maximum;
+//     }
+//   }
+
+//   return store;
+// };
+
+// // let prices = [2, 4, 1];
+// let prices = [7, 1, 5, 3, 6];
+
+// console.log(maxProfit(prices));
+
+// let num1 = [1, 2, 3, 0, 0, 0];
+// let num2 = [2, 5, 6];
+
+// let tl = num1.length + num2.length;
+// let count = 0;
+// for (let i = num1.length; i < tl; i++) {
+//   num1.push(num2[count]);
+//   count++;
+// }
+
+// for (let i = 0; i < num1.length; i++) {
+//   for (let j = i; j < num1.length; j++) {
+//     if (num1[i] > num1[j]) {
+//       let temp = num1[i];
+//       num1[i] = num1[j];
+//       num1[j] = temp;
+//     }
+//   }
+// }
+
+// let x = 0;
+// for (let i = 0; i < num1.length; i++) {
+//   if (num1[i] !== 0) {
+//     num1[x] = num1[i];
+//     x = x + 1;
+//   }
+// }
+// num1.length = x;
+// console.log(num1);
+// for (let i = 0; i < num1.length; i++) {
+//   let minIndex = i;
+//   for (let j = i + 1; j < num1.length; j++) {
+//     if (num1[j] < num1[minIndex]) {
+//       minIndex = j;
+//     }
+//   }
+//   let temp = num1[i];
+//   num1[i] = num1[minIndex];
+//   num1[minIndex] = temp;
+// }
+// console.log(num1);
+
+var moveZeroes = function (nums) {
+  let x = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      let temp = nums[x];
+      nums[x] = nums[i];
+      nums[i] = temp;
+      x = x + 1;
     }
   }
-
-  return store;
+  return nums;
 };
-
-// let prices = [2, 4, 1];
-let prices = [7, 1, 5, 3, 6];
-
-console.log(maxProfit(prices));
+// let nums = [0, 1, 0, 3, 12];
+// let nums = [0];
+// let nums = [0, 0, 1];
+let nums = [1];
+console.log(nums);
+console.log(moveZeroes(nums));
