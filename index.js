@@ -1063,26 +1063,64 @@
 // console.log(nums);
 // console.log(moveZeroes(nums));
 
-var findMaxConsecutiveOnes = function (nums) {
-  let c = 0;
-  let count = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) {
-      count++;
-    } else {
-      if (c < count) {
-        c = count;
-      }
-      count = 0;
-    }
+// var findMaxConsecutiveOnes = function (nums) {
+//   let c = 0;
+//   let count = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== 0) {
+//       count++;
+//     } else {
+//       if (c < count) {
+//         c = count;
+//       }
+//       count = 0;
+//     }
 
-    if (i === nums.length - 1 && c < count) {
-      c = count;
+//     if (i === nums.length - 1 && c < count) {
+//       c = count;
+//     }
+//   }
+
+//   return c;
+// };
+// let nums = [1, 0, 1, 1, 0, 1];
+// console.log(nums);
+// console.log(findMaxConsecutiveOnes(nums));
+
+// var missingNumber = function (nums) {
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     for (let j = 0; j < nums.length - 1; j++) {
+//       if (nums[j] > nums[j + 1]) {
+//         let temp = nums[j];
+//         nums[j] = nums[j + 1];
+//         nums[j + 1] = temp;
+//       }
+//     }
+//   }
+
+//   for (let i = 0; i <= nums.length; i++) {
+//     if (i !== nums[i]) {
+//       return i;
+//     }
+//   }
+// };
+
+var missingNumber = function (nums) {
+  for (let i = 0; i <= nums.length; i++) {
+    for (let j = 0; j <= nums.length; j++) {
+      if (i === nums[j]) {
+        break;
+      }
+      if (j === nums.length) {
+        return i;
+      }
     }
   }
-
-  return c;
 };
-let nums = [1, 0, 1, 1, 0, 1];
+
+// let nums = [3, 0, 1];
+// let nums = [9, 6, 4, 2, 3, 5, 7, 0, 1];
+// let nums = [3, 0, 1, 2, 5];
+let nums = [0, 1];
 console.log(nums);
-console.log(findMaxConsecutiveOnes(nums));
+console.log(missingNumber(nums));
