@@ -1105,22 +1105,71 @@
 //   }
 // };
 
-var missingNumber = function (nums) {
-  for (let i = 0; i <= nums.length; i++) {
-    for (let j = 0; j <= nums.length; j++) {
-      if (i === nums[j]) {
-        break;
-      }
-      if (j === nums.length) {
-        return i;
-      }
-    }
-  }
-};
+// var missingNumber = function (nums) {
+//   for (let i = 0; i <= nums.length; i++) {
+//     for (let j = 0; j <= nums.length; j++) {
+//       if (i === nums[j]) {
+//         break;
+//       }
+//       if (j === nums.length) {
+//         return i;
+//       }
+//     }
+//   }
+// };
 
 // let nums = [3, 0, 1];
 // let nums = [9, 6, 4, 2, 3, 5, 7, 0, 1];
 // let nums = [3, 0, 1, 2, 5];
-let nums = [0, 1];
-console.log(nums);
-console.log(missingNumber(nums));
+// let nums = [0, 1];
+// console.log(nums);
+// console.log(missingNumber(nums));
+
+// var singleNumber = function (nums) {
+//   let obj = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     if (obj[nums[i]] === undefined) {
+//       obj[nums[i]] = 1;
+//     } else {
+//       obj[nums[i]] += 1;
+//     }
+//   }
+
+//   for (let a in obj) {
+//     if (obj[a] < 2) {
+//       return a;
+//     }
+//   }
+// };
+
+// var singleNumber = function (nums) {
+//   let check = false;
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] === nums[j]) {
+//         check = true;
+//         nums[j] = "_";
+//         break;
+//       }
+//     }
+//     if (check) {
+//       check = false;
+//     } else {
+//       return nums[i];
+//     }
+//   }
+// };
+
+var singleNumber = function (nums) {
+  xor = 0;
+  for (let i = 0; i < nums.length; i++) {
+    xor = xor ^ nums[i];
+    console.log(xor);
+  }
+  return xor;
+};
+// let nums = [3, 3, 1];
+let nums = [4, 1, 2, 1, 2];
+// let nums = [3, 1, 5, 4, 1, 5, 3];
+// let nums = [1];
+console.log(singleNumber(nums));
