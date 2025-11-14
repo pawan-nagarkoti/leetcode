@@ -1160,16 +1160,22 @@
 //   }
 // };
 
-var singleNumber = function (nums) {
-  xor = 0;
-  for (let i = 0; i < nums.length; i++) {
-    xor = xor ^ nums[i];
-    console.log(xor);
-  }
-  return xor;
-};
+// var singleNumber = function (nums) {
+//   xor = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     xor = xor ^ nums[i];
+//     console.log(xor);
+//   }
+//   return xor;
+// };
 // let nums = [3, 3, 1];
-let nums = [4, 1, 2, 1, 2];
+// let nums = [4, 1, 2, 1, 2];
 // let nums = [3, 1, 5, 4, 1, 5, 3];
 // let nums = [1];
-console.log(singleNumber(nums));
+// console.log(singleNumber(nums));
+
+function num(n) {
+  if (n === 0) return n;
+  return n + num(n - 1);
+}
+console.log(num(2));
