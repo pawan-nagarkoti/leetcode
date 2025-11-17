@@ -1174,8 +1174,53 @@
 // let nums = [1];
 // console.log(singleNumber(nums));
 
-function num(n) {
-  if (n === 0) return n;
-  return n + num(n - 1);
+// function num(n) {
+//   if (n === 0) return n;
+//   return n + num(n - 1);
+// }
+// console.log(num(2));
+
+// function sum(n) {
+//   if (n === 0) return arr[n];
+//   return arr[n] + sum(n - 1);
+// }
+// let arr = [5, 1];
+// console.log(sum(arr.length - 1));
+// function odd(n, od) {
+//   if (arr[n] % 2 !== 0) {
+//     od.push(arr[n]);
+//   }
+//   if (n == 0) {
+//     let os = 0;
+//     for (let i = 0; i < od.length; i++) {
+//       os += od[i];
+//     }
+//     return os;
+//   }
+
+//   return odd(n - 1, od);
+// }
+// let arr = [5, 2, 0, 3, 6, 7];
+// let arr = [5, 3, 2, 10, 1];
+// let oddArr = [];
+// console.log(odd(arr.length - 1, oddArr));
+
+// let st = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] % 2 !== 0) {
+//     st += arr[i];
+//   }
+// }
+// console.log(st);
+
+function odd(n) {
+  let isOdd = arr[n] % 2 !== 0;
+  if (n == 0) {
+    return isOdd ? arr[n] : 0;
+  }
+
+  return (isOdd ? arr[n] : 0) + odd(n - 1);
 }
-console.log(num(2));
+
+let arr = [5, 3, 2, 10, 1];
+console.log(odd(arr.length - 1));
