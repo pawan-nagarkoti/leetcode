@@ -1231,9 +1231,24 @@
 // }
 // console.log(fac(3));
 
-var isPowerOfTwo = function (n) {
-  if (n == 1) return true;
-  else if (n % 2 != 0 || n < 1) return false;
-  return isPowerOfTwo(n / 2);
-};
-console.log(isPowerOfTwo(16));
+// var isPowerOfTwo = function (n) {
+//   if (n == 1) return true;
+//   else if (n % 2 != 0 || n < 1) return false;
+//   return isPowerOfTwo(n / 2);
+// };
+// console.log(isPowerOfTwo(16));
+
+let i = 0;
+let j = 1;
+let n = 4;
+let st = "01";
+let count;
+for (let f = 0; f < n - 1; f++) {
+  let k = i + j;
+  i = j;
+  j = k;
+  st += k;
+  count = k;
+}
+
+console.log(st, count);
