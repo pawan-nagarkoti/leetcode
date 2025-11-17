@@ -1213,14 +1213,27 @@
 // }
 // console.log(st);
 
-function odd(n) {
-  let isOdd = arr[n] % 2 !== 0;
-  if (n == 0) {
-    return isOdd ? arr[n] : 0;
-  }
+// function odd(n) {
+//   let isOdd = arr[n] % 2 !== 0;
+//   if (n == 0) {
+//     return isOdd ? arr[n] : 0;
+//   }
 
-  return (isOdd ? arr[n] : 0) + odd(n - 1);
-}
+//   return (isOdd ? arr[n] : 0) + odd(n - 1);
+// }
 
-let arr = [5, 3, 2, 10, 1];
-console.log(odd(arr.length - 1));
+// let arr = [5, 3, 2, 10, 1];
+// console.log(odd(arr.length - 1));
+
+// function fac(n) {
+//   if (n == 1) return n;
+//   return n * fac(n - 1);
+// }
+// console.log(fac(3));
+
+var isPowerOfTwo = function (n) {
+  if (n == 1) return true;
+  else if (n % 2 != 0 || n < 1) return false;
+  return isPowerOfTwo(n / 2);
+};
+console.log(isPowerOfTwo(16));
