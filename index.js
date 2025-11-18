@@ -1265,22 +1265,43 @@
 // console.log(linearSearch([2, 3, 4, 5, 10], 2));
 
 // binary search
-function binarySearch(arr, target) {
-  let left = 0;
-  let right = arr.length - 1;
+// function binarySearch(arr, target) {
+//   let left = 0;
+//   let right = arr.length - 1;
 
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-    if (arr[mid] === target) {
-      return mid;
-    } else if (target < arr[mid]) {
-      right = mid - 1;
+//   while (left <= right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (arr[mid] === target) {
+//       return mid;
+//     } else if (target < arr[mid]) {
+//       right = mid - 1;
+//     }
+//     // } else if (target > arr[mid]) {
+//     else {
+//       left = mid + 1;
+//     }
+//   }
+//   return -1;
+// }
+// console.log(binarySearch([2, 3, 4, 5, 10], 10));
+
+// buble sort
+function bubble(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let isSwap = false;
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        isSwap = true;
+      }
     }
-    // } else if (target > arr[mid]) {
-    else {
-      left = mid + 1;
-    }
+    if (!isSwap) return arr;
   }
-  return -1;
+  return arr;
 }
-console.log(binarySearch([2, 3, 4, 5, 10], 10));
+// let arr = [5, 2, 4, 1, 0];
+let arr = [1, 3];
+console.log(arr);
+console.log(bubble(arr));
