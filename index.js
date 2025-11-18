@@ -1286,22 +1286,41 @@
 // console.log(binarySearch([2, 3, 4, 5, 10], 10));
 
 // buble sort
-function bubble(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    let isSwap = false;
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-        isSwap = true;
+// function bubble(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let isSwap = false;
+//     for (let j = 0; j < arr.length - i - 1; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//         isSwap = true;
+//       }
+//     }
+//     if (!isSwap) return arr;
+//   }
+//   return arr;
+// }
+// // let arr = [5, 2, 4, 1, 0];
+// let arr = [1, 3];
+// console.log(arr);
+// console.log(bubble(arr));
+
+// selection sort
+function selection(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
       }
     }
-    if (!isSwap) return arr;
+    let temp = arr[i];
+    arr[i] = arr[minIndex];
+    arr[minIndex] = temp;
   }
   return arr;
 }
-// let arr = [5, 2, 4, 1, 0];
-let arr = [1, 3];
+let arr = [7, 1, 5, -1, 4, 0, 3, 2];
 console.log(arr);
-console.log(bubble(arr));
+console.log(selection(arr));
