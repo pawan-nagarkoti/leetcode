@@ -1238,17 +1238,28 @@
 // };
 // console.log(isPowerOfTwo(16));
 
-let i = 0;
-let j = 1;
-let n = 4;
-let st = "01";
-let count;
-for (let f = 0; f < n - 1; f++) {
-  let k = i + j;
-  i = j;
-  j = k;
-  st += k;
-  count = k;
-}
+// let i = 0;
+// let j = 1;
+// let n = 4;
+// let st = "01";
+// let count;
+// for (let f = 0; f < n - 1; f++) {
+//   let k = i + j;
+//   i = j;
+//   j = k;
+//   st += k;
+//   count = k;
+// }
 
-console.log(st, count);
+// console.log(st, count);
+
+/// linear search
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}
+console.log(linearSearch([2, 3, 4, 5, 10], 2));
